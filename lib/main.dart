@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'basic_widgets/text_widget.dart';
 import 'basic_widgets/image_widget.dart';
 import 'basic_widgets/loading_cupertino.dart';
+import 'basic_widgets/fab_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,28 +53,26 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      body: Center(
+     body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CupertinoButton(
-              child: const Text("Contoh Button"),
-              onPressed: () {},
-            ),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
 
-            const SizedBox(height: 20),
-
-            const CupertinoActivityIndicator(),
-
-            const SizedBox(height: 20),
-
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+      FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.pink,
+        child: const Icon(Icons.thumb_up),
       ),
+
+      const SizedBox(height: 20),
+
+      Text(
+        '$_counter',
+        style: Theme.of(context).textTheme.headlineMedium,
+      ),
+    ],
+  ),
+),
 
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
